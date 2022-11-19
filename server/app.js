@@ -20,8 +20,8 @@ import authRoutes from "./routes/auth.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
 import productRoutes from "./routes/product.routes.js";
 
-app.use("/api/v1/users", authRoutes);
-app.use("/api/v1", categoryRoutes);
-app.use("/api/v1/products", productRoutes);
+app.use("/api/v1/user", authRoutes);
+app.use("/api/v1/category", categoryRoutes);
+app.use("/api/v1/product", productRoutes);
 
 export default app;

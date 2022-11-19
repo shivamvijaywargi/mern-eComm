@@ -3,7 +3,7 @@ import User from "../models/user.model.js";
 
 /******************************************************
  * @REGISTER
- * @route http://localhost:5000/api/register
+ * @route http://localhost:5000/api/v1/user/register
  * @method POST
  * @description User register Controller for creating new user
  ******************************************************/
@@ -61,7 +61,7 @@ export const registerUser = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @LOGIN
- * @route http://localhost:5000/api/login
+ * @route http://localhost:5000/api/v1/user/login
  * @method POST
  * @description User login Controller for loggin in existing user
  ******************************************************/
@@ -113,6 +113,7 @@ export const loginUser = asyncHandler(async (req, res) => {
   });
 });
 
+// Dummy route, delete later
 export const secretRoute = async (req, res) => {
   res.send("Secret");
 };

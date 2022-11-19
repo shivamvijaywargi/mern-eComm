@@ -5,7 +5,7 @@ import Category from "../models/category.model.js";
 
 /******************************************************
  * @CREATECATEGORY
- * @route http://localhost:5000/api/category
+ * @route http://localhost:5000/api/v1/category/create
  * @method POST
  * @description Create category Controller for creating a category
  ******************************************************/
@@ -46,7 +46,7 @@ export const createCategory = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @UPDATECATEGORY
- * @route http://localhost:5000/api/category/:id
+ * @route http://localhost:5000/api/v1/category/update/:categoryId
  * @method PUT
  * @description Update category Controller for updating a category
  ******************************************************/
@@ -86,7 +86,7 @@ export const updateCategory = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @DELETECATEGORY
- * @route http://localhost:5000/api/category/:id
+ * @route http://localhost:5000/api/v1/category/delete/:categoryId
  * @method DELETE
  * @description Delete category Controller for deleting a category
  ******************************************************/
@@ -105,7 +105,7 @@ export const deleteCategory = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @GETALLCATEGORY
- * @route http://localhost:5000/api/categories
+ * @route http://localhost:5000/api/v1/category/all
  * @method GET
  * @description category Controller for getting all the categories
  ******************************************************/
@@ -122,7 +122,7 @@ export const getAllCategories = asyncHandler(async (req, res) => {
 
 /******************************************************
  * @GETSINGLECATEGORY
- * @route http://localhost:5000/api/category/:id
+ * @route http://localhost:5000/api/v1/category/:slug
  * @method GET
  * @description category Controller for getting a single category
  ******************************************************/
