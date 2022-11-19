@@ -110,3 +110,7 @@ export const loginUser = asyncHandler(async (req, res) => {
     token,
   });
 });
+
+export const secretRoute = async (req, res) => {
+  res.send("Secret");
+};
