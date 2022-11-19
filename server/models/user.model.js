@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Password is required"],
       minlength: [8, "Password must be atleast 8 characters"],
+      select: false,
     },
     address: {
       type: String,
@@ -44,7 +45,7 @@ userSchema.methods.comparePassword = async function (plainPassword) {
 };
 
 userSchema.methods.getJWTToken = async function () {
-  return await jwt.sign({ _id: this._id }, process.env.JWT_SECRET, {
+  return jwt.sign({ _id: this._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRY,
   });
 };
