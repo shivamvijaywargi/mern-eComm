@@ -17,7 +17,9 @@ app.use(morgan("dev"));
 
 // Importing the routes
 import authRoutes from "./routes/auth.routes.js";
+import categoryRoutes from "./routes/category.routes.js";
 
 app.use("/api", authRoutes);
+app.use("/api", categoryRoutes);
 
 export default app;
