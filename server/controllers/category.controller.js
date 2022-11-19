@@ -66,10 +66,16 @@ export const updateCategory = asyncHandler(async (req, res) => {
   const slug = slugify(name);
 
   // Update category
-  const updateCategory = await Category.findByIdAndUpdate(categoryId, {
-    name,
-    slug,
-  });
+  const updateCategory = await Category.findByIdAndUpdate(
+    categoryId,
+    {
+      name,
+      slug,
+    },
+    {
+      new: true,
+    }
+  );
 
   res.status(200).json({
     success: true,
