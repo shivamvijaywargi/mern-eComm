@@ -7,6 +7,7 @@ connectToDB();
 const PORT = process.env.PORT || 5000;
 
 mongoose.connection.once("open", () => {
+  console.log(`Connected to Database`);
   app.listen(PORT, () => {
     console.log(`App is running at http://localhost:${PORT}`);
   });
