@@ -1,5 +1,9 @@
+import { useAuth } from "../context/authContext";
+
 const Home = () => {
-  return <div>Home</div>;
+  const [auth, setAuth] = useAuth();
+
+  return <div>{JSON.stringify(auth)}</div>;
 };
 
 export default Home;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useAuth } from "../../context/authContext";
 
 const Register = () => {
   const [userData, setUserData] = useState({
@@ -9,6 +10,8 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const [auth, setAuth] = useAuth();
 
   const handleUserData = (e) => {
     setUserData({
@@ -37,6 +40,14 @@ const Register = () => {
       );
 
       if (response.data.success) {
+        localStorage.setItem("auth", JSON.stringify(response.data));
+
+        setAuth({
+          ...auth,
+          token: response.data.token,
+          user: response.data.user,
+        });
+
         toast.success(response.data.message);
       }
     } catch (error) {
