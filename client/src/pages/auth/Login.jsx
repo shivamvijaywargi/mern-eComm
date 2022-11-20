@@ -1,10 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../context/authContext";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -43,6 +46,8 @@ const Login = () => {
         });
 
         toast.success(response.data.message);
+
+        navigate("/dashboard");
       }
     } catch (error) {
       toast.error(error.response.data.message);

@@ -1,9 +1,13 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import { useAuth } from "../../context/authContext";
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -49,6 +53,8 @@ const Register = () => {
         });
 
         toast.success(response.data.message);
+
+        navigate("/dashboard");
       }
     } catch (error) {
       toast.error(error.response.data.message);

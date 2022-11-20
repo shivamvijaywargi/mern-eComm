@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom auth hook
+// Custom auth hook use like const [auth, setAuth] = useAuth();
 const useAuth = () => useContext(AuthContext);
 
 export { AuthProvider, useAuth };
